@@ -1,0 +1,18 @@
+{
+  "name": "assign-from-json",
+  "version": "0.0.1",
+  "description": "Assign a local variable based on a json file element value",
+  "main": "main.js",
+  "author": {
+    "name": "fiddlermikey"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {},
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@vercel/ncc": "^0.36.1",
+    "fs": "^0.0.1-security"
+  }
+}

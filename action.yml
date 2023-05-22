@@ -1,0 +1,18 @@
+name: 'Assign From JSON'
+description: 'Assign Variable from JSON Value'
+inputs:
+  input-file:  
+    description: 'JSON data file to read'
+    required: true
+  input-property:  # property in dot notation. e.g. 'name' or 'name.last
+    description: 'Root-level or nested  property using dot notation'
+    required: true
+    default: 'package.json'
+outputs:
+  output-property: 
+    description: 'The value of input-property'
+  output-value: 
+    description: 'The value of the json object property passed as input-property'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

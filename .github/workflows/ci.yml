@@ -1,0 +1,23 @@
+name: Set var from json
+on: [push]
+
+jobs:
+  assign-from-json:
+    runs-on: ubuntu-latest
+    name: A test job to read a value from json as a variable
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Read a json file 
+        uses: ./ # Uses an action in the root directory
+        id: read
+        with:
+          input-file: 'package.json'
+          input-property: 'author.name' # Exp: 'fiddlermikey'
+      - name: read the variable
+        id: write
+        run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
+
+
