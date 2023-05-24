@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Assign a local variable based on a json file element value",
   "main": "main.js",
+  "scripts": {
+    "build": "ncc build main.js",
+    "precommit": "npm run build && git add dist/"
+  },
   "author": {
     "name": "fiddlermikey"
   },
