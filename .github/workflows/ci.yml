@@ -25,6 +25,7 @@ jobs:
       - name: adding final markdown
         id: adding-final-markdown
         # run: echo "###  ${{ steps.read.outputs.output-property }}:${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This works
-        run: echo "###  ${{ steps.read.outputs.output-property }} &#58; ${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY
+        # run: echo "###  ${{ steps.read.outputs.output-property }} &#58; ${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This also works
+        run: echo "###  ${{ steps.read.outputs.output-property }} &hyphen; &colon; &hyphen;${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # 
 
 
