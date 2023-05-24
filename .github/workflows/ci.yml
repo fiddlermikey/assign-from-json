@@ -14,7 +14,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: read
         with:
-          input-file: 'package.json'
+          input-file: 'packages.json'
           input-property: 'author.name' # Exp: 'fiddlermikey'
       - name: adding initial markdown
         id: adding-initial-markdown
@@ -26,6 +26,6 @@ jobs:
         id: adding-final-markdown
         # run: echo "###  ${{ steps.read.outputs.output-property }}:${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This works
         # run: echo "###  ${{ steps.read.outputs.output-property }} &#58; ${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This also works
-        run: echo "###  ${{ steps.read.outputs.output-property }} &hyphen; &colon; &hyphen;${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # 
+        run: echo "###  ${{ steps.read.outputs.output-property }} &hyphen; &colon; &hyphen;${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This works for hypen and colon
 
 
