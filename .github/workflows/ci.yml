@@ -15,7 +15,7 @@ jobs:
         id: read
         with:
           input-file: 'package.json'
-          input-property: 'foo' # Exp: 'fiddlermikey'
+          input-property: 'author.name' # Exp: 'fiddlermikey'
       - name: adding initial markdown
         id: adding-initial-markdown
         run: echo '### Input file read' > $GITHUB_STEP_SUMMARY
