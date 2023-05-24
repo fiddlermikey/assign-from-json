@@ -16,8 +16,14 @@ jobs:
         with:
           input-file: 'package.json'
           input-property: 'author.name' # Exp: 'fiddlermikey'
+      - name: adding initial markdown
+        id: adding-initial-markdown
+        run: echo '### Input file read' > $GITHUB_STEP_SUMMARY
       - name: read the variable
         id: write
         run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
+      - name: adding final markdown
+        id: adding-final-markdown
+        run: echo '###  ${{ steps.read.outputs.output-property }} : ${{ steps.read.outputs.output-value }}' >> $GITHUB_STEP_SUMMARY
 
 
