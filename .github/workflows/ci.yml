@@ -14,8 +14,8 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: read
         with:
-          input-file: 'packages.json'
-          input-property: 'author.name' # Exp: 'fiddlermikey'
+          input-file: 'package.json'
+          input-property: 'foo' # Exp: 'fiddlermikey'
       - name: adding initial markdown
         id: adding-initial-markdown
         run: echo '### Input file read' > $GITHUB_STEP_SUMMARY
