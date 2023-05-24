@@ -24,6 +24,6 @@ jobs:
         run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
       - name: adding final markdown
         id: adding-final-markdown
-        run: echo "###  ${{ steps.read.outputs.output-property }} ':' ${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY
+        run: echo "###  ${{ steps.read.outputs.output-property }}:${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY
 
 
