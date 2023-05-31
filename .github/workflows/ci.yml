@@ -6,26 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A test job to read a value from json as a variable
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
       - name: Read a json file 
-        uses: ./ # Uses an action in the root directory
+        uses: ./ 
         id: read
         with:
           input-file: 'package.json'
           input-property: 'author.name' # Exp: 'fiddlermikey'
-      - name: adding initial markdown
-        id: adding-initial-markdown
-        run: echo '### Input file read' > $GITHUB_STEP_SUMMARY
-      - name: read the variable
-        id: write
-        run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
-      - name: adding final markdown
-        id: adding-final-markdown
-        # run: echo "###  ${{ steps.read.outputs.output-property }}:${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This works
-        # run: echo "###  ${{ steps.read.outputs.output-property }} &#58; ${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This also works
-        run: echo "###  ${{ steps.read.outputs.output-property }} &hyphen; &colon; &hyphen;${{ steps.read.outputs.output-value }}" >> $GITHUB_STEP_SUMMARY # This works for hypen and colon
-
-
