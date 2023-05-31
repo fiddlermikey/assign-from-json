@@ -9,8 +9,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Read a json file 
-        uses: ./ 
+        uses: ./
         id: read
         with:
           input-file: 'package.json'
           input-property: 'author.name' # Exp: 'fiddlermikey'
+      - name: read the variable
+        id: write
+        run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
+
+
