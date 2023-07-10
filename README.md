@@ -23,7 +23,7 @@ jobs:
     name: A test job to read a value from json as a variable
     steps:
       - name: Read a json file 
-        uses: ./
+        uses: fiddlermikey/assign-from-json@v0.9
         id: read
         with:
           input-file: 'package.json'
