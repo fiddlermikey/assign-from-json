@@ -1,5 +1,8 @@
 name: 'Assign From JSON'
 description: 'Assign Variable from JSON Value'
+branding:
+  icon: 'truck'
+  color: 'purple'
 inputs:
   input-file:  
     description: 'JSON data file to read'
