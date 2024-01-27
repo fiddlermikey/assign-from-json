@@ -17,5 +17,5 @@ outputs:
   output-value: 
     description: 'The value of the json object property passed as input-property'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
