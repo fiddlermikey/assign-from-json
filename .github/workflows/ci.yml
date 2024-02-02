@@ -7,13 +7,20 @@ jobs:
     name: A test job to read a value from json as a variable
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Read a json file 
         uses: ./
         id: read
         with:
           input-file: 'package.json'
           input-property: 'author.name' # Exp: 'fiddlermikey'
+      - name: Read a json file 
+        uses: ./
+        id: read-nofail
+        with:
+          input-file: 'package.json'
+          input-property: 'foo' # does not exist
+          required-value: 'false' # Ignore if not present
       - name: Display property value for input-property in input-file
         id: write
         run: echo "The value for ${{ steps.read.outputs.output-property }} is ${{ steps.read.outputs.output-value }}"
