@@ -2836,12 +2836,14 @@ const fs = __nccwpck_require__(147);
 const core = __nccwpck_require__(186);
 try {
   const item = core.getInput('input-property') || 'foo'
+  const requiredValue = core.getInput('required-value') || 'false'
   const inputFile = core.getInput('input-file') || 'package.json'
   const newdata = JSON.parse(fs.readFileSync(inputFile))
-  const outValue = eval("newdata." + item)
+  var outValue = ''
+  outValue = eval("newdata." + item)
   core.setOutput('output-property', item);
   core.setOutput('output-value', outValue);
-  if (outValue === undefined) {
+  if (outValue === undefined && requiredValue == 'true') {
     core.setFailed('Property: ' + item + ' does not exist in ' + inputFile);
   }
 }

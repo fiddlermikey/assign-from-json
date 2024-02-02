@@ -8,7 +8,8 @@
     "precommit": "npm run build && git add dist/"
   },
   "author": {
-    "name": "fiddlermikey"
+    "name": "fiddlermikey",
+    "email": "fake@fakestreet.org"
   },
   "devDependencies": {
     "eslint": "^8.21.0"
