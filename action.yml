@@ -14,7 +14,7 @@ inputs:
   required-value:  
     description: 'Fail if not found'
     required: false
-    default: 'false'
+    default: 'true'
 outputs:
   output-property: 
     description: 'The value of input-property'
